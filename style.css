@@ -1,0 +1,14 @@
+body{
+  background-color: #ddd;
+}
+.BookContainer{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  padding: 2%;
+  border-radius: 10px;
+  background-color: #3c6f98;
+}
+.store-title{
+  font-weight: bold;
+  color: white;

@@ -1,0 +1,74 @@
+<!DOCYTPE html>
+<html ng-app="BookStore">
+  <head>
+    <title>Angular BookStore App</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
+    <script src="./index.js" ></script>
+  </head>
+  <body>
+    <div class="container" ng-controller="BooksController">
+              <div class="BookContainer">
+                <div class="row text-center">
+                    <h2 class="store-title">Book Store</h2>
+                </div>
+                <div class="row">
+                    <!-- Adding new book -->
+                         <div class="col-sm-4 col-md-4">
+                
+                <div class="row text-center">
+                  <h4 style="font-weight:bold; color:white;">Add New Book</h4>
+                </div>
+
+                <div class="addBook">
+                  <div class="form-group">
+                    <input type="text" ng-model="bookTitle" placeholder="Book       Title" class="form-control"/>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" ng-model="bookAuthor"            placeholder="Author" class="form-control"/>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" ng-model="bookPages" placeholder="Pages"       class="form-control"/>
+                  </div>
+                  <div class="form-group">
+                    <button type="button" name="button" class="btn btn-primary"       ng-click="addBook(bookTitle,bookAuthor,bookPages)">Add        Book</button>
+                  </div>
+                </div>
+
+              </div>
+                    <!-- Adding new book -->
+
+                    <!-- display all books -->
+                     <div class="col-sm-8 col-md-8">
+     <div class="row text-center">
+         <h4 style="font-weight:bold; color:white;">All Books</h4>
+     </div>
+     <ul class="list-group">
+       <li class="list-group-item" ng-repeat="book in books">
+          <span ng-hide="edit">
+             <b>{{book.title}}</b> | by {{book.author}}
+             <span class="badge">{{book.pages}} pages</span>
+             <span class="pull-right">
+                <button type="button" name="button" class="btn btn-info btn-sm" ng-click="edit=true">edit</button>
+                <button type="button" name="button" class="btn btn-danger btn-sm" ng-click="delete($index)">delete</button>
+             </span>
+          </span>
+
+          <span ng-show="edit">
+            <input type="text"  ng-model="book.title" />
+            <input type="text"  ng-model="book.author" />
+            <input type="text"  ng-model="book.pages" />
+            <button type="button" name="button" class="btn btn-primary btn-sm" ng-click="update(book.title,book.author,book.pages,$index);edit=false">update</button>
+          </span>
+
+        </li>
+     </ul>
+ </div>
+
+                    <!-- display all books -->
+                </div>
+              </div>
+          </div>
+  </body>
+</html>
