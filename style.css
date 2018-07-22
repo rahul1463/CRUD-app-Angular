@@ -12,3 +12,20 @@ body{
 .store-title{
   font-weight: bold;
   color: white;
+}
+.addBook{
+	
+	margin-left: 40%;
+	padding: 5px;
+}
+.form-item{
+	
+	padding: 5px;
+}
+
+.butn{
+	
+	    width: 194px;
+    /* color: red; */
+    height: 30px;
+}
